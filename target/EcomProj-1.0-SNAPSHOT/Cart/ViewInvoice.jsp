@@ -66,7 +66,7 @@
 
                             </td>
                             <td>${c.getQty()}</td>
-                            <td><c:out value="${Income.getPrice()}"/></td>
+                            <td>₹<c:out value="${Income.getPrice()}"/></td>
                             <td><i style="font-size: 20px;"class="fas fa-rupee-sign"><span>&nbsp;</span>${c.getQty() * Income.getPrice()}</i></td>
                             
                             

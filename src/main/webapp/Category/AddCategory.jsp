@@ -1,3 +1,5 @@
+<%@page import="com.mycompany.ecomproj.impl.CategoryDAOImpl"%>
+<%@page import="com.mycompany.ecomproj.dao.CategoryDAO"%>
 <%@page import="com.mycompany.ecomproj.model.User"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,11 +12,19 @@
     </head>
     <body>
         <%
-            User u = (User)request.getSession().getAttribute("userObject");
+             User u = (User)request.getSession().getAttribute("userObject");
     
-        if( u == null && !u.getRol().equals("ROLE_ADMIN") )
+       if(u==null){
+       response.sendRedirect("/EcomProj/User/Login.jsp");
+       }
+       if(!u.getRol().equals("ROLE_ADMIN") )
         response.sendError ( HttpServletResponse.SC_UNAUTHORIZED, "You don't have enough privileges" );
+        
+    CategoryDAO cdao = new CategoryDAOImpl();
     
+    request.setAttribute("catList", cdao.getCategory());
+
+        
         %>
          <c:import url="/header.jsp"></c:import>
         
@@ -33,7 +43,7 @@
                   
                 %>
                 
-                ${userObject}
+                
         <c:choose>
 
             <c:when test="${not empty userObject}">

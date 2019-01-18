@@ -10,18 +10,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registration</title>
+        <title>Sign Up</title>
     </head>
     <body>
     <c:import url="/header.jsp"></c:import>
-          
+          <body style="background-color:wheat;">
           <div class="container">
-                <h1>Registration</h1>
+                <h1>Sign Up</h1>
                 <br>
             <form method="post" action="${pageContext.request.contextPath}/AddUserToDB">
-                <input type="text" placeholder="Enter Username" name="username" class="form-control"><br>
-                <input type="password" class="form-control" name="password" placeholder="Enter Password"><br>
-                <input type="text" placeholder="Enter Email" name="email" class="form-control"><br>
+                <input type="text" placeholder="Enter Username" name="username" class="form-control"> <br>
+                <input type="password" class="form-control" name="password"   placeholder="Enter Password"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
+                <input type="text" placeholder="Enter Email" name="email" class="form-control"<br><br>
                 <input type="text" placeholder="Enter Phone Number" name="phoneno" class="form-control"><br>
                 
                 <br>
@@ -30,7 +30,7 @@
                 
           <c:if test="${not empty success}">
               <br>
-              <h1 class="alert alert-danger">${success}</h1>
+              <h1 class="alert alert-danger">${success}</h1><br><br
               <p>Click here to Login...  <a  class="btn btn-primary"href="http://localhost:8080/EcomProj/User/Login.jsp">Login</a></p>
               
             </c:if>

@@ -44,12 +44,13 @@
                 <input type="hidden" value="${curr.getId()}" name="prodId">
                
                 <p>${curr.getDescription()}</p>
-                <h4><span><strong>Rs&nbsp</strong></span>${curr.getPrice()}</h4>                
+                <h4><span><strong>₹&nbsp</strong></span>${curr.getPrice()}</h4>                
                 <button type="submit" class="btn btn-danger">Add To Cart</button>
                 
                     </div>
                     <div class="col-md-4">
                         <img src="${curr.getImagePath()}" style="height: 350px; width: 300px;" class="img img-thumbnail">
+                        
                     </div>
                 </div>
                 
@@ -60,7 +61,7 @@
                     <br>
                     <br>
                       <div class="jumbotron" style="color:white;background-color: black; margin-top: 60px; margin-bottom: 0;">
-            <p>Welcome to Ecom</p>
+            <p>Welcome to IndiaMART</p>
         </div>
     </body>
 </html>

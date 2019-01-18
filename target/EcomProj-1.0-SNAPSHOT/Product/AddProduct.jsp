@@ -36,7 +36,7 @@
             <form method="post" action="${pageContext.request.contextPath}/AddProductToDB" enctype="multipart/form-data">
                 <input type="text" placeholder="Enter Product Name" name="name" class="form-control"><br>
                 <textarea class="form-control" name="description" placeholder="Enter Product Description"></textarea><br>
-                <input type="text" placeholder="Enter Price" name="price" class="form-control"><br>
+                <input type="text" placeholder="Enter Price" name="price" class="form-control"> <br>
                 <input type="file" name="imagePath" class="form-control"><br>
                 <input type="text" placeholder="Enter Quantity" name="qty" class="form-control"><br>
                 <!--            <input type="text" placeholder="Enter Category" name="category" class="form-control"><br>-->

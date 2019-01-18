@@ -11,6 +11,7 @@
         
         <c:import url="/header.jsp"></c:import>
            <div class="container">
+               <body style="background-color:brown;">
                 <h1>Login</h1>
                 <br>
             <form method="post" action="${pageContext.request.contextPath}/login">

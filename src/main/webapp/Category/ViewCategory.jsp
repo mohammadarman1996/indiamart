@@ -19,19 +19,18 @@
     <body>
     <c:import url="/header.jsp"></c:import>
     <%
-        User u = (User)request.getSession().getAttribute("userObject");
-        if(u==null){
+         User u = (User)request.getSession().getAttribute("userObject");
+    
+       if(u==null){
        response.sendRedirect("/EcomProj/User/Login.jsp");
        }
        if(!u.getRol().equals("ROLE_ADMIN") )
         response.sendError ( HttpServletResponse.SC_UNAUTHORIZED, "You don't have enough privileges" );
-       
+        
+    CategoryDAO cdao = new CategoryDAOImpl();
     
-        if( u == null && !u.getRol().equals("ROLE_ADMIN") )
-        response.sendError ( HttpServletResponse.SC_UNAUTHORIZED, "You don't have enough privileges" );
-    
-        CategoryDAO cdao = new CategoryDAOImpl();
-        request.setAttribute("cats", cdao.getCategory());
+    request.setAttribute("catList", cdao.getCategory());
+
     %>
         
         <a href= "http://localhost:${pageContext.request.localPort}${pageContext.request.contextPath}/Category/AddCategory.jsp" class="btn btn-primary" style="float:right; margin-right: 50px;">Add Category</a><br><br>
